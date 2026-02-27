@@ -3,6 +3,11 @@ import { serveStatic } from "hono/bun";
 
 const app = new Hono();
 
+const adminAccount = {
+  username: process.env.ADMIN_USERNAME!,
+  password: process.env.ADMIN_PASSWORD!,
+};
+
 const welcomeStrings = [
   "Hello Hono!",
   "To learn more about Hono on Vercel, visit https://vercel.com/docs/frameworks/backend/hono",

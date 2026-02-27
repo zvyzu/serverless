@@ -1,6 +1,6 @@
-import { connect } from "@tidbcloud/serverless";
-import { drizzle } from "drizzle-orm/tidb-serverless";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 
-const client = connect({ url: process.env.DATABASE_URL! });
-const db = drizzle({ client: client });
+const sql = neon(process.env.DATABASE_URL!);
+const db = drizzle({ client: sql });
 export { db };
