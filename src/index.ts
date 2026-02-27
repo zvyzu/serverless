@@ -16,8 +16,11 @@ const welcomeStrings = [
 app.get("/api", (c) => {
   return c.text(welcomeStrings.join("\n\n"));
 });
+app.get("/", (c) => {
+  return c.redirect("/index.html");
+});
 // Serve index.html at root
-app.get("/", serveStatic({ path: "./public/index.html" }));
+// app.get("/", serveStatic({ path: "./public/index.html" }));
 
 // Serve other static files
 app.use("/*", serveStatic({ root: "./public" }));
