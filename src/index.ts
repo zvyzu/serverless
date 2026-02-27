@@ -16,6 +16,6 @@ const welcomeStrings = [
 app.get("/api", (c) => {
   return c.text(welcomeStrings.join("\n\n"));
 });
-app.get("/*", serveStatic({ root: "./public" }));
+// app.get("/*", serveStatic({ root: "./public" }));
 
 export default app;
