@@ -16,6 +16,10 @@ const welcomeStrings = [
 app.get("/api", (c) => {
   return c.text(welcomeStrings.join("\n\n"));
 });
-// app.get("/*", serveStatic({ root: "./public" }));
+// Serve index.html at root
+app.get("/", serveStatic({ path: "./public/index.html" }));
+
+// Serve other static files
+app.use("/*", serveStatic({ root: "./public" }));
 
 export default app;
